@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -12,16 +13,16 @@ http://www.springframework.org/schema/context/spring-context.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
-		destroy-method="close">
+	<!-- Data source configuration for Oracle -->
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
 		<beans:property name="username" value="Babblers" />
 		<beans:property name="password" value="pass" />
 	</beans:bean>
 
-	<beans:bean id="sessionFactory"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	<!-- Session factory object and Hibernate properties for Oracle Data source -->
+	<beans:bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="hibernateProperties">
 			<beans:props>
@@ -32,4 +33,10 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 		</beans:property>
 		<beans:property name="packagesToScan" value="com.niit.models"></beans:property>
 	</beans:bean>
+
+	<!-- Create transaction object for sessionFactory -->
+	<beans:bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	
 </beans>

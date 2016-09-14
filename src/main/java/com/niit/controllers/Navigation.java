@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Navigation {
 	@RequestMapping("/")
 	public String Homepage() {
-		return "index";
+		return "Home";
 	}
 }
