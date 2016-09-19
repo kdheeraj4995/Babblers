@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.models.Users;
+import com.niit.models.User;
 
 @Repository
 public class UsersDAOImpl implements UsersDAO {
@@ -13,17 +13,17 @@ public class UsersDAOImpl implements UsersDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	/*Used for new user registration or updating*/
+	/*Used for creating or updating user*/
 	@Transactional
-	public void saveOrUpdate(Users users) {
-	sessionFactory.getCurrentSession().saveOrUpdate(users);
+	public void saveOrUpdate(User user) {
+	sessionFactory.getCurrentSession().saveOrUpdate(user);
 		
 	}
 
-	/*Used to delete user*/
+	/*	Used for deleting user*/
 	@Transactional
-	public void delete(Users users) {
-		sessionFactory.getCurrentSession().delete(users);
+	public void delete(User user) {
+		sessionFactory.getCurrentSession().delete(user);
 	}
 
 }

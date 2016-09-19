@@ -1,4 +1,4 @@
- package com.niit.controllers;
+package com.niit.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -6,17 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.niit.models.User;
-import com.niit.service.UsersService;
+import com.niit.models.Forum;
+import com.niit.service.ForumService;
 
 @RestController
-public class UsersRestController {
+public class ForumRestController {
 	
 	@Autowired
-	private UsersService usersService;
+	private ForumService forumService;
+
+	@RequestMapping(value="/CreateForum",method = RequestMethod.POST )
+	public void CreateForum(@RequestBody Forum forum) {
 	
-	@RequestMapping(value = "/PostService", method = RequestMethod.POST )
-	public void PostService(@RequestBody User user) {
-		usersService.UserRegistration(user);
+		forumService.createForum(forum);
 	}
+	
 }

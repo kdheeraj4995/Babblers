@@ -5,36 +5,46 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.springframework.stereotype.Component;
+
 
 @Entity
-@Table
-@Component
-public class Users {
-
+@Table(name="Users")
+public class User {
+	
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(length=15)
+	private int userid;
 	
-	@Column(unique=true,nullable=false)
+	@Column(nullable=false,unique=true,length=20)
 	private String username;
 	
-	@Column(nullable=false)
+	@Column(nullable=false,length=20)
 	private String name;
 	
-	@Column(nullable=false)
+	@Column(nullable=false,length=20)
 	private String password;
+	
+	@Column(nullable=false,length=10)
 	private String gender;
+	
+	@Column(nullable=false,length=20)
 	private String email;
+	
+	@Column(nullable=false,length=15)
 	private int mobile;
+	
+	@Column(length=20)
 	private String Enabled;
+	
+	@Column(length=20)
 	private String Role;
 	
-	public int getId() {
-		return id;
+	public int getUserid() {
+		return userid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 	public String getUsername() {
 		return username;

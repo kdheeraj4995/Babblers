@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.niit.dao.UsersDAO;
-import com.niit.models.Users;
+import com.niit.models.User;
 
 @Service
 public class UsersServiceImpl implements UsersService{
@@ -12,15 +12,10 @@ public class UsersServiceImpl implements UsersService{
 	@Autowired
 	private UsersDAO usersDAO;
 	
-	public void UserRegistration(Users users) {
+	public void UserRegistration(User user) {
 		
-		/*User is enabled when he registers*/
-		users.setEnabled("true");
-		
-		/*Default role after registration is User*/
-		users.setRole("Role_USER");
-		
-		/*Registering new user*/
-		usersDAO.saveOrUpdate(users);
+		user.setEnabled("true");       /*User is enabled when he registers*/
+		user.setRole("Role_USER");     /*Default role after registration is User*/
+		usersDAO.saveOrUpdate(user);   /*Registering new user*/
 	}
 }

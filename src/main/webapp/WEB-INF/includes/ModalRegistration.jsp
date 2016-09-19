@@ -6,7 +6,7 @@
       font-size: 20px;
   }
   </style>
-<div class="container">
+<div class="container"  >
 	<!-- Trigger the modal with a button -->
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" role="dialog">
@@ -78,7 +78,7 @@
 							</div>
 						</div>
 						<p>By clicking Create an account, you agree to our Terms and
-							that you have read our Data Policy, including our Cookie Use.</p>
+							that you have read our Data Policy, including our Cookie Use.</p><br>
 						<button type="submit" class="btn btn-success  btn-block">
 							<span class="glyphicon glyphicon-off"></span> Register
 						</button>
@@ -105,6 +105,6 @@
 	$(document).ready(function() {
 		$("#myBtn").click(function() {
 			$("#myModal").modal();
+			});
 		});
-	});
 </script>

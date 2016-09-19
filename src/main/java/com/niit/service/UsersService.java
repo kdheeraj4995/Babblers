@@ -1,9 +1,10 @@
 package com.niit.service;
 
-import com.niit.models.Users;
+import com.niit.models.User;
 
 
 public interface UsersService {
 
-	public void UserRegistration(Users users);
+	/*Creating new user*/
+	public void UserRegistration(User user);
 }
