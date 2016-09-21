@@ -14,28 +14,31 @@ http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
 http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security.xsd">
-	<security:http auto-config="true" use-expressions="true">
 
-		<security:intercept-url pattern="/user" access="hasRole('ROLE_ADMIN')" />
+	<security:http auto-config="true" use-expressions="true">
+		<security:intercept-url pattern="/user"
+			access="hasRole('ROLE_ADMIN')" />
 
 		<security:form-login login-page="/login"
-			default-target-url="/" login-processing-url="/perform_login"
-			authentication-failure-url="/login" />
-			<!-- authentication-success-forward-url="/login_session_attributes" --> 
+			default-target-url="/" 
+			login-processing-url="/perform_login"
+			authentication-success-forward-url="/LoginSuccess" 
+			authentication-failure-url="/login"/>
 
 		<security:logout logout-url="/perform_logout"
-			invalidate-session="true"/> <!-- logout-success-url="/Welcome" /> -->
+			invalidate-session="true" 
+			logout-success-url="/Home"/>
 
 		<security:csrf disabled="true" />
-
 	</security:http>
 
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="select username,password,Enabled from Users where username=?"
-				authorities-by-username-query="select username, Role from userdetails where username =?" />
+				users-by-username-query="select username , password,enabled from UserDetails where username=?"
+				authorities-by-username-query="select username, role_name from userdetails where username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
+
 </beans:beans>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en-US" data-ng-app="Myapp">
 <head>
@@ -8,10 +7,10 @@
 <script src="${pageContext.request.contextPath}/resources/js/AngularControllers/App.js"></script>
 <title>Babblers</title>
 </head>
-<body style="padding-top: 50px; margin-bottom: 50px">
+<body style="padding-top: 50px; margin-bottom:75px">
 	<header><%@include file="/WEB-INF/includes/Header.jsp"%></header>
 
-	<div id="tabs">
+	<div id="tabs" class="container" style="margin-top: 25px">
 		<ul>
 			<li><a href="#fragment-1">Blog</a></li>
 			<li><a href="#fragment-2">Forum</a></li>

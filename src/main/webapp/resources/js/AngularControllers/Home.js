@@ -15,7 +15,7 @@ app.controller('RegController', [ '$scope', '$http', function($scope, $http) {
 			url : BASE_URL + '/PostService',
 			data : $scope.users
 		}).success(function(data, status, headers, config) {
-			alert("Success");
+			//alert("Success");
 			$scope.name = '';
 			$scope.username = '';
 			$scope.password = '';
@@ -23,6 +23,8 @@ app.controller('RegController', [ '$scope', '$http', function($scope, $http) {
 			$scope.email = '';
 			$scope.gender = '';
 			$scope.Confirm_Password='';
+			$("#registration").modal("hide");
+			
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});	

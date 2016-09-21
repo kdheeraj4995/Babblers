@@ -1,6 +1,5 @@
 package com.niit.models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,20 +11,10 @@ public class Forum {
 	
 	@Id
 	@GeneratedValue
-	@Column(nullable=false,length=15)
 	private int fid;
-	
-	@Column(length=15)
 	private int f_userid;
-	
-	@Column(nullable=false,length=20)
 	private String forumName;
-	
-	
-	@Column(nullable=false)
 	private String forumDesc;
-	
-	@Column(nullable=false,length=40)
 	private String forumtime;
 
 	public int getFid() {

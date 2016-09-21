@@ -13,7 +13,6 @@ public class ForumServiceImpl implements ForumService{
 	private ForumDAO forumDAO;
 	
 	public void createForum(Forum forum) {
-		
 		forum.setForumtime(new java.util.Date().toString());
 		forumDAO.saveOrUpdate(forum);
 	}

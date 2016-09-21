@@ -1,15 +1,15 @@
 <style>
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white !important;
-      text-align: center;
-      font-size: 20px;
-  }
-  </style>
-<div class="container"  >
+.modal-header, h4, .close {
+	background-color: #5cb85c;
+	color: white !important;
+	text-align: center;
+	font-size: 20px;
+}
+</style>
+<div class="container">
 	<!-- Trigger the modal with a button -->
 	<!-- Modal -->
-	<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal fade" id="registration" role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->
@@ -19,22 +19,22 @@
 				</div>
 				<div class="modal-body" style="padding: 30px 50px;">
 					<form role="form" data-ng-submit="submit()"
-						data-ng-controller="RegController">
+						data-ng-controller="RegController" method="post">
 						<div class="form-group form-group-sm">
-						<div class="input-group">
+							<div class="input-group">
 								<div class="input-group-addon">
 									<i class="glyphicon glyphicon-plus"></i>
 								</div>
-								<input type="text" class="form-control"
-									placeholder="Name" data-ng-model="name">
+								<input type="text" class="form-control" placeholder="Name"
+									data-ng-model="name">
 							</div>
 							<br>
 							<div class="input-group">
 								<div class="input-group-addon">
 									<i class="glyphicon glyphicon-user"></i>
 								</div>
-								<input type="text" class="form-control"
-									placeholder="Username" data-ng-model="username">
+								<input type="text" class="form-control" placeholder="Username"
+									data-ng-model="username">
 							</div>
 							<br>
 							<div class="input-group">
@@ -47,10 +47,11 @@
 							<br>
 							<div class="input-group">
 								<div class="input-group-addon">
-									<i class="glyphicon glyphicon-eye-close" ></i>
+									<i class="glyphicon glyphicon-eye-close"></i>
 								</div>
 								<input type="password" class="form-control"
-									data-ng-model="Confirm_Password" placeholder="Re Enter Password">
+									data-ng-model="Confirm_Password"
+									placeholder="Re Enter Password">
 							</div>
 							<br>
 							<div class="input-group">
@@ -78,7 +79,8 @@
 							</div>
 						</div>
 						<p>By clicking Create an account, you agree to our Terms and
-							that you have read our Data Policy, including our Cookie Use.</p><br>
+							that you have read our Data Policy, including our Cookie Use.</p>
+						<br>
 						<button type="submit" class="btn btn-success  btn-block">
 							<span class="glyphicon glyphicon-off"></span> Register
 						</button>
@@ -103,8 +105,8 @@
 </div>
 <script>
 	$(document).ready(function() {
-		$("#myBtn").click(function() {
-			$("#myModal").modal();
-			});
+		$("#reg").click(function() {
+			$("#registration").modal();
 		});
+	});
 </script>

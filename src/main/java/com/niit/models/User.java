@@ -1,6 +1,5 @@
 package com.niit.models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,38 +7,20 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Users")
+@Table(name="UserDetails")
 public class User {
 	
 	@Id
 	@GeneratedValue
-	@Column(length=15)
 	private int userid;
-	
-	@Column(nullable=false,unique=true,length=20)
 	private String username;
-	
-	@Column(nullable=false,length=20)
 	private String name;
-	
-	@Column(nullable=false,length=20)
 	private String password;
-	
-	@Column(nullable=false,length=10)
 	private String gender;
-	
-	@Column(nullable=false,length=20)
 	private String email;
-	
-	@Column(nullable=false,length=15)
-	private int mobile;
-	
-	@Column(length=20)
+	private String mobile;
 	private String Enabled;
-	
-	@Column(length=20)
-	private String Role;
-	
+	private String role_name;
 	public int getUserid() {
 		return userid;
 	}
@@ -76,23 +57,25 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getMobile() {
-		return mobile;
-	}
-	public void setMobile(int mobile) {
-		this.mobile = mobile;
-	}
 	public String getEnabled() {
 		return Enabled;
 	}
 	public void setEnabled(String enabled) {
 		Enabled = enabled;
 	}
-	public String getRole() {
-		return Role;
+	
+	public String getRole_name() {
+		return role_name;
 	}
-	public void setRole(String role) {
-		Role = role;
+	public void setRole_name(String role_name) {
+		this.role_name = role_name;
 	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	
 	
 }

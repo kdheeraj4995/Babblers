@@ -1,6 +1,5 @@
 package com.niit.models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,17 +11,40 @@ public class ForumComments {
 	
 	@Id
 	@GeneratedValue
-	@Column(length=15)
 	private int cid;
-	
-	@Column(nullable=false,length=15)
 	private int c_userid;
-	
-	@Column(nullable=false,length=15)
 	private int c_fid;
+	private String commentDesc;
+	private String commenttime;
+	public int getCid() {
+		return cid;
+	}
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+	public int getC_userid() {
+		return c_userid;
+	}
+	public void setC_userid(int c_userid) {
+		this.c_userid = c_userid;
+	}
+	public int getC_fid() {
+		return c_fid;
+	}
+	public void setC_fid(int c_fid) {
+		this.c_fid = c_fid;
+	}
+	public String getCommentDesc() {
+		return commentDesc;
+	}
+	public void setCommentDesc(String commentDesc) {
+		this.commentDesc = commentDesc;
+	}
+	public String getCommenttime() {
+		return commenttime;
+	}
+	public void setCommenttime(String commenttime) {
+		this.commenttime = commenttime;
+	} 
 	
-	@Column(nullable=false)
-	private String commentDesc; 
-	
-
 }
