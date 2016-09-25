@@ -9,4 +9,7 @@ public interface UsersDAO {
 	
 	/*	Used for deleting user*/
 	public void delete(User user);
+	
+	/*Used to retrieve single user based on username*/
+	public User getUser(String username);
 }

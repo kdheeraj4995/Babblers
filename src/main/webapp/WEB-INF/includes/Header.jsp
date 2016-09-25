@@ -8,15 +8,15 @@
 </head>
 <body>
 	<!-- Navigation bar Common to all pages -->
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top" >
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Babblers</a>
+				<a class="navbar-brand " style="color: white">Babblers</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 					<sec:authorize access="isAuthenticated()">
-					<li><a>Hello  <b><sec:authentication property="principal.username" /></b></a></li>
+					<li><a style="color: white">Hello  <b><sec:authentication property="principal.username" /></b></a></li>
 						<li><a href="perform_logout"><span
 								class="glyphicon glyphicon-log-out"></span></a></li>
 					</sec:authorize>

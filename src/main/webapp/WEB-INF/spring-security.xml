@@ -30,6 +30,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 			logout-success-url="/Home"/>
 
 		<security:csrf disabled="true" />
+		
 	</security:http>
 
 	<security:authentication-manager>
