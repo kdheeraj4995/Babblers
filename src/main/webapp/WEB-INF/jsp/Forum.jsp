@@ -1,4 +1,4 @@
-<%@ taglib prefix="sec"
+  <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
 
@@ -33,7 +33,7 @@
 					<th>Forum ID</th>
 					<th>Forum Name</th>
 					<th>Forum Description</th>
-					<sec:authorize access="isAuthenticated()">
+					<sec:authorize access="isAuthenticated()">   
 						<th>Delete Forum</th>
 						<th>Edit Forum</th>
 					</sec:authorize>
@@ -54,6 +54,7 @@
 			</tbody>
 		</table>
 	</div>
+	
 	<script
 		src="${pageContext.request.contextPath}/resources/js/AngularControllers/Forum.js"></script>
 </div>

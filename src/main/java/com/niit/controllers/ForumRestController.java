@@ -1,7 +1,5 @@
 package com.niit.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.gson.Gson;
 import com.niit.models.Forum;
 import com.niit.service.ForumService;
 
@@ -33,10 +30,7 @@ public class ForumRestController {
 	@GetMapping("/getAllForums")
 	public String getAllForums()
 	{
-		List<Forum> list=forumService.getAllForums();
-		Gson gson=new Gson();
-		String data=gson.toJson(list);
-		return data;
+		return forumService.getAllForums();
 	}	
 	
 	@DeleteMapping("/deleteForum/{forumid}")

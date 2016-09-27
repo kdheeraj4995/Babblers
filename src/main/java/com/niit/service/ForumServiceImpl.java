@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
 import com.niit.dao.ForumDAO;
 import com.niit.models.Forum;
 
@@ -27,10 +28,13 @@ public class ForumServiceImpl implements ForumService{
 		forumDAO.saveOrUpdate(forum);	
 	}
 
-	/*Retrive All Forum List */
-	public List<Forum> getAllForums() 
+	/*Retrive All Forum List and convert to JSON and saving in String */
+	public String  getAllForums() 
 	{
-		return forumDAO.getForums();
+		List<Forum> list=forumDAO.getForums();
+		Gson gson=new Gson();
+		String data=gson.toJson(list);
+		return data;
 	}
 
 	/*Delete single forum based on forum id*/

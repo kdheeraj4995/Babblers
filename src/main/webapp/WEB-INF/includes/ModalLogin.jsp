@@ -10,14 +10,14 @@
 	<!-- Trigger the modal with a button -->
 	<!-- Modal -->
 	<div class="modal fade" id="login" role="dialog">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-sm">
 
 			<!-- Modal content-->
 			<div class="modal-content">
-				<div class="modal-header" style="padding: 15px 50px;">
+				<div class="modal-header" style="padding: 15px 35px;">
 					<h4>Babbler Login</h4>
 				</div>
-				<div class="modal-body" style="padding: 50px 50px;">
+				<div class="modal-body" style="padding: 35px 35px;">
 					<form action="perform_login" method="post">
 						<div class="form-group form-group-sm">
 
