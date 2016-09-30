@@ -15,7 +15,6 @@
 <link href="<c:url value="/resources/css/jquery-ui.min.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/jquery-ui.structure.min.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/jquery-ui.theme.min.css"/>" rel="stylesheet">
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 
 <!-- AngularJS v1.5.8 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>

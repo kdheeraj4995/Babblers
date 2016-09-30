@@ -45,9 +45,9 @@
 					<td>{{blog.blogDesc}}</td>
 					<sec:authorize access="isAuthenticated()">
 						<td><button data-ng-click="deleteBlog(blog.bid)"
-								class="btn btn-xs btn-danger">Delete</button></td>
+								class="btn btn-xs  btn-block btn-danger">Delete</button></td>
 						<td><button data-ng-click="editBlog(blog.bid)"
-								class="btn btn-xs btn-info">Edit</button></td>
+								class="btn btn-xs  btn-block btn-info">Edit</button></td>
 					</sec:authorize>
 				</tr>
 			</tbody>

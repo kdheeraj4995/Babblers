@@ -18,7 +18,7 @@
 					<h4>Babbler Login</h4>
 				</div>
 				<div class="modal-body" style="padding: 35px 35px;">
-					<form action="perform_login" method="post">
+					<form action="${pageContext.request.contextPath}/perform_login" method="post">
 						<div class="form-group form-group-sm">
 
 							<div class="input-group">

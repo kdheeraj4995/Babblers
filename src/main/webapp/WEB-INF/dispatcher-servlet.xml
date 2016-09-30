@@ -18,7 +18,7 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp" ></property>
 	</bean>
 	

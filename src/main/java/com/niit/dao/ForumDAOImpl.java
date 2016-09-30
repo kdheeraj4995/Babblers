@@ -1,4 +1,4 @@
-
+  
 package com.niit.dao;
 
 import java.util.List;
@@ -46,6 +46,14 @@ public class ForumDAOImpl implements ForumDAO {
 		c.add(Restrictions.eq("fid", forumid));
 		Forum forum=(Forum) c.uniqueResult();
 		return forum;
+	}
+
+	@Transactional
+	public List<Forum> getIndividualForum(int forumid) {
+		Criteria c=sessionFactory.getCurrentSession().createCriteria(Forum.class);
+		c.add(Restrictions.eq("fid", forumid));
+		List<Forum> list=c.list();
+		return list;
 	}
 
 }
