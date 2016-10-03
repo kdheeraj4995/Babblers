@@ -16,7 +16,7 @@ import com.niit.models.Blog;
 import com.niit.service.BlogService;
 
 @RestController
-public class BlogRestController {
+public class RC_Blog {
 	
 	@Autowired
 	private BlogService blogService;

@@ -16,7 +16,7 @@ import com.niit.models.Forum;
 import com.niit.service.ForumService;
 
 @RestController
-public class ForumRestController {
+public class RC_Forum {
 	
 	@Autowired
 	private ForumService forumService;

@@ -9,7 +9,7 @@ import com.niit.models.User;
 import com.niit.service.UsersService;
 
 @RestController
-public class UsersRestController {
+public class RC_Users {
 	
 	@Autowired
 	private UsersService usersService;

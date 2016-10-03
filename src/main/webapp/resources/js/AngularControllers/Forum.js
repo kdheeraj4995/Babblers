@@ -9,7 +9,7 @@ app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
 		}
 		$http({
 			method : 'POST',
-			url : BASE_URL + '/CreateForum',
+			url : BASE_URL +'/CreateForum',
 			data : $scope.forum
 		}).success(function(data, status, headers, config) {
 			alert("Success");
