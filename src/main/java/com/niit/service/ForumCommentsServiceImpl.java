@@ -1,10 +1,13 @@
 package com.niit.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
 import com.niit.dao.ForumCommentsDAO;
 import com.niit.models.ForumComments;
 
@@ -23,6 +26,14 @@ public class ForumCommentsServiceImpl implements ForumCommentsService {
 		comment.setCommenttime(new java.util.Date());
 		
 		forumCommentsDAO.saveOrUpdate(comment);
+	}
+
+	public String getAllComments() 
+	{
+	List<ForumComments> list= forumCommentsDAO.getComments();
+	Gson gson=new Gson();
+	String data=gson.toJson(list);
+	return data;
 	}
 
 }
