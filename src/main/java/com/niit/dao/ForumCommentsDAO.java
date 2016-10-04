@@ -10,5 +10,5 @@ public interface ForumCommentsDAO {
 	public void saveOrUpdate(ForumComments comment);
 	
 	/*Retrieves all Comments*/
-	public List<ForumComments> getComments();
+	public List<ForumComments> getComments(int fid);
 }

@@ -28,9 +28,9 @@ public class ForumCommentsServiceImpl implements ForumCommentsService {
 		forumCommentsDAO.saveOrUpdate(comment);
 	}
 
-	public String getAllComments() 
+	public String getAllComments(int fid) 
 	{
-	List<ForumComments> list= forumCommentsDAO.getComments();
+	List<ForumComments> list= forumCommentsDAO.getComments(fid);
 	Gson gson=new Gson();
 	String data=gson.toJson(list);
 	return data;

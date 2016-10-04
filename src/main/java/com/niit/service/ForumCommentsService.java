@@ -11,5 +11,5 @@ public interface ForumCommentsService {
 	public void createForum(ForumComments comment,HttpSession session);
 	
 	/*Retrive All Comment List and convert to JSON and saving in String */
-	public String getAllComments();
+	public String getAllComments(int fid);
 }

@@ -4,10 +4,10 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div data-ng-controller="IndividualForum">
-	<div style="margin-top: 20px">
+	<div style="margin-top: 20px;border: 5px;border-color: blue">
 		<c:if test="${!empty forumList}">
 			<c:forEach items="${forumList}" var="forum">
-				<div style="background-color: lightgrey" hidden="true">
+				<div  hidden="true">
 					<p style="padding: 10px; font-size: large">
 						<input type="number" value="${forum.fid}" id="fid">
 					</p>
@@ -40,20 +40,17 @@
 
 <div data-ng-init="getAllForumComments()">
 		<table class="table table-bordered table-hover">
-			<thead>
+			<!-- <thead>
 				<tr>
-					<!-- <th>Forum ID</th> -->
+					<th>Forum ID</th>
 					<th>Forum Name</th>
 					<th>Forum Description</th>
-					<sec:authorize access="isAuthenticated()">
-						<th>Delete Forum</th>
-					</sec:authorize>
 				</tr>
-			</thead>
+			</thead> -->
 			<tbody>
 				<tr data-ng-repeat="comment in comments">
-					<td width="80%">{{comment.commentDesc}}</td>
-					<td width="20%">{{comment.commenttime}}</td>
+					<td width="85%">{{comment.commentDesc}}</td>
+					<td width="15%">{{comment.commenttime}}</td>
 					<%-- <td width="20%">
 						<div class="btn-group  btn-group-justified ">
 							<sec:authorize access="isAuthenticated()">
