@@ -19,6 +19,12 @@
 				</c:import>
 			</div>
 		</c:when>
+		<c:when test="${IndividualBlog}">
+			<div class="container">
+				<c:import url="/WEB-INF/views/IndividualBlog.jsp">
+				</c:import>
+			</div>
+		</c:when>
 		<c:when test="${ForumClicked}">
 			<div class="container">
 				<c:import url="/WEB-INF/views/Forum.jsp">
@@ -37,6 +43,9 @@
 				</c:import>
 			</div>
 		</c:when>
+		<c:otherwise>
+		
+		</c:otherwise>
 	</c:choose>
 
 	<%-- <div class="container">
@@ -71,6 +80,7 @@
 
 
 	<Footer><%@include file="/WEB-INF/includes/Foot.jsp"%></Footer>
+	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			if (window.location.href.indexOf('#login') != -1) {

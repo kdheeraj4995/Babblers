@@ -48,4 +48,12 @@ public class BlogDAOImpl implements BlogDAO {
 		return blog;
 	}
 
+	@Transactional
+	public List<Blog> getIndividualForum(int blogid) {
+		Criteria c=sessionFactory.getCurrentSession().createCriteria(Blog.class);
+		c.add(Restrictions.eq("bid", blogid));
+		List<Blog> list=c.list();
+		return list;
+	}
+
 }

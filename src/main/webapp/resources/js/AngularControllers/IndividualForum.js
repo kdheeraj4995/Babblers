@@ -19,7 +19,16 @@ app.controller('IndividualForum', [ '$scope', '$http', function($scope, $http) {
 				alert("Error");
 			});	
 		};
-		
+		$scope.getAllForumComments = function() {
+			$http({
+				method : 'GET',
+				url : BASE_URL + '/getAllComments/'+ $scope.c_fid
+			}).success(function(data, status, headers, config) {
+				$scope.comments = data;// alert(data); 
+			}).error(function(data, status, headers, config) {
+				alert("Error");
+			});
+		};
 }]);
 
 

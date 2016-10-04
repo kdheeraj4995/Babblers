@@ -33,17 +33,14 @@
 				<tr>
 					<!-- <th>Forum ID</th> -->
 					<th>Forum Name</th>
-					<th>Forum Description</th>
-					<sec:authorize access="isAuthenticated()">
-						<th>Delete Forum</th>
-					</sec:authorize>
+					<th colspan="2">Forum Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr data-ng-repeat="forum in forums">
 					<td width="15%">{{forum.forumName}}</td>
 					<td width="70%">{{forum.forumDesc}}</td>
-					<td width="20%">
+					<td width="15%">
 						<div class="btn-group  btn-group-justified ">
 							<sec:authorize access="isAuthenticated()">
 								<a class="btn btn-primary btn-xs"

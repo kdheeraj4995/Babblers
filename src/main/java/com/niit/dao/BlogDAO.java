@@ -17,4 +17,6 @@ public interface BlogDAO {
 	
 	/*Fetch single blog object based on blogid*/
 	public Blog getBlog(int blogid);
+
+	public List<Blog> getIndividualForum(int blogid);
 }

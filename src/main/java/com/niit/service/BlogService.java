@@ -1,5 +1,7 @@
 package com.niit.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import com.niit.models.Blog;
@@ -17,4 +19,8 @@ public interface BlogService {
 	
 	/*Edit individual blog based on blog id*/
 	public Blog editBlog(int blogid);
+
+	/*Retrive Single Blog data and convert to JSON and saving in String */
+	public List<Blog> getSingleBlog(int blogid);
+	
 }

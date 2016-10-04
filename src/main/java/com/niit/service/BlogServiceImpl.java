@@ -49,4 +49,10 @@ public class BlogServiceImpl implements BlogService{
 	{
 		 return blogDAO.getBlog(blogid);
 	}
+	
+	/*Retrive Single Blog data and convert to JSON and saving in String */
+	public List<Blog> getSingleBlog(int blogid) 
+	{
+		return blogDAO.getIndividualForum(blogid);
+	}
 }
