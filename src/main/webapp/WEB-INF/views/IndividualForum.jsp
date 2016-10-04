@@ -49,8 +49,8 @@
 			</thead> -->
 			<tbody>
 				<tr data-ng-repeat="comment in comments">
-					<td width="85%">{{comment.commentDesc}}</td>
-					<td width="15%">{{comment.commenttime}}</td>
+					<td width="80%">{{comment.commentDesc}}</td>
+					<td width="20%">{{comment.commenttime}}</td>
 					<%-- <td width="20%">
 						<div class="btn-group  btn-group-justified ">
 							<sec:authorize access="isAuthenticated()">
