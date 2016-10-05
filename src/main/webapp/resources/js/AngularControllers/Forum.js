@@ -1,5 +1,5 @@
 app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
-	
+
 	$scope.submit = function() {
 		var BASE_URL = 'http://localhost:8085/Babblers';
 		$scope.forum = {	
@@ -69,6 +69,18 @@ app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
 			alert("Error");
 		});
 	};
+	
+	$scope.accessForum = function(f_userid) {
+		//alert("Hello"+f_userid);
+		if($scope.userid==f_userid)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 	
 }]);
 

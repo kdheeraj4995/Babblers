@@ -39,25 +39,27 @@
 			<tbody>
 				<tr data-ng-repeat="forum in forums">
 					<td width="15%">{{forum.forumName}}</td>
-					<td width="70%">{{forum.forumDesc}}</td>
+					<td width="65%">{{forum.forumDesc}}</td>
 					<td width="15%">
 						<div class="btn-group  btn-group-justified ">
 							<sec:authorize access="isAuthenticated()">
-								<a class="btn btn-primary btn-xs"
-									data-ng-click="deleteForum(forum.fid)">Delect</a>
-
-								<a class="btn btn-primary btn-xs"
-									data-ng-click="editForum(forum.fid)">Edit</a>
+								<div data-ng-if="accessForum(forum.f_userid)">
+									<a class="btn btn-primary btn-xs"
+										data-ng-click="deleteForum(forum.fid)">Delect</a> 
+									<a	class="btn btn-primary btn-xs"
+										data-ng-click="editForum(forum.fid)">Edit</a>
+								</div>
 							</sec:authorize>
-							<a href="forum/{{forum.fid}}" class="btn btn-primary btn-xs">View</a>
-						</div>
+						</div>	
 					</td>
+					<td width="5%"><a href="forum/{{forum.fid}}" class="btn btn-primary btn-xs">View</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+<input type="text" value="${sessionScope.userid}" style="margin-top: 75px" id="userid" hidden="true" />
 
-	<script
-		src="${pageContext.request.contextPath}/resources/js/AngularControllers/Forum.js"></script>
+
+	<script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Forum.js"></script>
 </div>
 
