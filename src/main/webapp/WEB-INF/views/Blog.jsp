@@ -1,6 +1,4 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-
-
 <div data-ng-controller="BlogController">
 	<sec:authorize access="isAuthenticated()">
 		<form role="form" data-ng-submit="submit()"
@@ -41,25 +39,26 @@
 					<!-- 	<td>{{blog.bid}}</td> -->
 					<td width="15%">{{blog.blogName}}</td>
 					<td width="70%">{{blog.blogDesc}}</td>
-					<td width="15%">
+					<td width="10%">
 						<div class="btn-group  btn-group-justified ">
 							<sec:authorize access="isAuthenticated()">
+							<div data-ng-if="accessBlog(blog.b_userid)">
 								<a class="btn btn-primary btn-xs"
 									data-ng-click="deleteBlog(blog.bid)">Delect</a>
 
 								<a class="btn btn-primary btn-xs"
 									data-ng-click="editBlog(blog.bid)">Edit</a>
+							</div>
 							</sec:authorize>
-							<a href="blog/{{blog.bid}}" class="btn btn-primary btn-xs">View</a>
 						</div>
-					</td>
-
+				</td>
+				<td width="5%"><a href="blog/{{blog.bid}}" class="btn btn-primary btn-xs">View</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<script
-		src="${pageContext.request.contextPath}/resources/js/AngularControllers/Blog.js"></script>
+<input type="text" value="${sessionScope.userid}" style="margin-top: 75px" id="userid" hidden="true" />
+<script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Blog.js"></script>
 </div>
 

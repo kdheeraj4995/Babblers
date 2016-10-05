@@ -1,5 +1,5 @@
 app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
-	
+	  
 	$scope.submit = function() {
 		var BASE_URL = 'http://localhost:8085/Babblers';
 		$scope.blog = {	
@@ -59,6 +59,18 @@ app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
 			alert("Error");
 		});
 	};
+	
+	$scope.accessBlog = function(b_userid) {
+		//alert("Hello"+b_userid);
+		if($scope.userid==b_userid)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }]);
 
 

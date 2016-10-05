@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
@@ -39,13 +40,13 @@
 			<tbody>
 				<tr data-ng-repeat="forum in forums">
 					<td width="15%">{{forum.forumName}}</td>
-					<td width="65%">{{forum.forumDesc}}</td>
-					<td width="15%">
+					<td width="70%">{{forum.forumDesc}}</td>
+					<td width="10%">
 						<div class="btn-group  btn-group-justified ">
 							<sec:authorize access="isAuthenticated()">
 								<div data-ng-if="accessForum(forum.f_userid)">
 									<a class="btn btn-primary btn-xs"
-										data-ng-click="deleteForum(forum.fid)">Delect</a> 
+										data-ng-click="deleteForum(forum.fid)">Delete</a> 
 									<a	class="btn btn-primary btn-xs"
 										data-ng-click="editForum(forum.fid)">Edit</a>
 								</div>
