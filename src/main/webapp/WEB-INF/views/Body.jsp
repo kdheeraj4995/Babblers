@@ -6,18 +6,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body >
+<body>
 	<div class="container text-center">
 		<div class="row">
-			<div class="col-sm-3 well ">
-				<div class="well" data-ng-init="profileimage()" data-ng-controller="ProfileImage">
+			<div class="col-sm-3 well">
+				<div class="well">
 					<p><a href="#">My Profile</a></p>
-					<img data-ng-src="data:image/JPEG;base64,{{img}}" class="img-circle" height="65px" width="65px" alt="Avatar">
+					<img src="" class="img-circle" height="65" width="65" alt="Avatar">
 				</div>
 				<div class="well">
-				<a data-toggle="tab" href="#home" class="active">Home</a> ||
-				<a data-toggle="tab" href="#new">Settings</a>
+					<p><a href="#">Interests</a></p>
+					<p>
+					  <span class="label label-default">News</span> 
+					  <span class="label label-primary">W3Schools</span> 
+					  <span class="label label-success">Labels</span> 
+					  <span class="label label-info">Football</span> 
+				      <span class="label label-warning">Gaming</span> 
+					  <span class="label label-danger">Friends</span>
+					</p>
 				</div>
+				<a data-toggle="tab" href="#home" class="active">Home</a>
+				<a data-toggle="tab" href="#new">Settings</a>
 			</div>
 
 			<div class="col-sm-9">
@@ -34,7 +43,6 @@
 		</div>
 	</div>
 <script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Profile.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Settings.js"></script>
 </body>
 </html>
 
