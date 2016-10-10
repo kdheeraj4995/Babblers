@@ -33,4 +33,9 @@ public class UsersServiceImpl implements UsersService{
 		session.setAttribute("userid",user.getUserid());
 		session.setAttribute("name", user.getName());
 	}
+
+	
+	public User viewUser(HttpSession session) {
+		return usersDAO.viewUser((int) session.getAttribute("userid"));
+	}
 }
