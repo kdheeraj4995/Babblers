@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="en-US" data-ng-app="Myapp">
 <head>
@@ -45,10 +45,12 @@
 				</div>
 			</c:when>
 			<c:otherwise>
-				<div class="container">
+			<sec:authorize access="hasRole('ROLE_USER')">
+				<div class="container-fluid">
 					<c:import url="/WEB-INF/views/Body.jsp">
 					</c:import>
 				</div>
+			</sec:authorize>
 			</c:otherwise>
 		</c:choose>
 	</div>
@@ -79,8 +81,8 @@
 			</div>
 		</div>
 	</div>
-
  --%>
+
 
 
 	<Footer><%@include file="/WEB-INF/includes/Foot.jsp"%></Footer>

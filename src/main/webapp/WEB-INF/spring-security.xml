@@ -38,7 +38,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
 				users-by-username-query="select username , password,enabled from UserDetails where username=?"
-				authorities-by-username-query="select username, role_name from userdetails where username =?" />
+				authorities-by-username-query="select username, role from userdetails where username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 

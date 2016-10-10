@@ -29,6 +29,8 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 				<beans:prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</beans:prop>
 		   <!-- <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop> -->
 				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.connection.SetBigStringTryClob">true</beans:prop>
+				<beans:prop key="hibernate.jdbc.batch_size">0</beans:prop>
 			</beans:props>
 		</beans:property>
 		<beans:property name="packagesToScan" value="com.niit.models"></beans:property>

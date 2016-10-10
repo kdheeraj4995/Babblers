@@ -19,5 +19,7 @@
 <!-- AngularJS v1.5.8 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
 
+<!-- Angular File Upload -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ng-file-upload.min.js"></script>
 
 

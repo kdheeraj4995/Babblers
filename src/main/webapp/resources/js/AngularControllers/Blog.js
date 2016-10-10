@@ -1,9 +1,9 @@
 app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
-	  
+	$scope.userid=document.getElementById("userid").value; 
 	$scope.submit = function() {
 		var BASE_URL = 'http://localhost:8085/Babblers';
 		$scope.blog = {	
-			bid       : $scope.blogid,
+			bid      : $scope.blogid,
 			blogName : $scope.blogName,
 			blogDesc : $scope.blogDesc,
 		}
@@ -62,12 +62,10 @@ app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
 	
 	$scope.accessBlog = function(b_userid) {
 		//alert("Hello"+b_userid);
-		if($scope.userid==b_userid)
-		{
+		if($scope.userid==b_userid) {
 			return true;
 		}
-		else
-		{
+		else {
 			return false;
 		}
 	}

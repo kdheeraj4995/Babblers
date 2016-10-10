@@ -19,7 +19,7 @@ public class UsersServiceImpl implements UsersService{
 	public void UserRegistration(User user) 
 	{
 		user.setEnabled("1");       		/*User is enabled when he registers*/
-		user.setRole_name("Role_USER");     /*Default role after registration is User*/
+		user.setRole("ROLE_USER");     /*Default role after registration is User*/
 		usersDAO.saveOrUpdate(user);   		/*Registering new user*/
 	}
 

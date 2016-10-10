@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.service.BlogRatingService;
 import com.niit.service.BlogService;
 import com.niit.service.ForumService;
 import com.niit.service.UsersService;
@@ -23,6 +24,9 @@ public class Navigation {
 	
 	@Autowired
 	private BlogService blogService;
+	
+	@Autowired
+	private BlogRatingService blogRatingService;
 	
 	@RequestMapping(value={"/","/Home"})
 	public String Homepage()
@@ -59,10 +63,12 @@ public class Navigation {
 		m.addAttribute("IndividualForum", "true");
 		return "Home";
 	}
+	
 	@RequestMapping("blog/{bid}")
-	public String ViewIndividualBlog(@PathVariable("bid") int bid,  Model m)
+	public String ViewIndividualBlog(@PathVariable("bid") int bid,  Model m,HttpSession session)
 	{
 		m.addAttribute("blogList", blogService.getSingleBlog(bid));
+		m.addAttribute("blogRating",blogRatingService.BlogRatingList(bid,session));
 		m.addAttribute("IndividualBlog", "true");
 		return "Home";
 	}

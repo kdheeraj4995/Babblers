@@ -1,5 +1,5 @@
 app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
-	 
+	  $scope.userid=document.getElementById("userid").value; 
 	$scope.submit = function() {
 		var BASE_URL = 'http://localhost:8085/Babblers';
 		$scope.forum = {	
