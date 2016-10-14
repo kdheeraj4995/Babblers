@@ -11,15 +11,8 @@
 <link href="<c:url value="/resources/css/bootstrap-theme.css"/>" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
-<!-- JQuery UI v1.12.0 -->
-<link href="<c:url value="/resources/css/jquery-ui.min.css"/>" rel="stylesheet">
-<link href="<c:url value="/resources/css/jquery-ui.structure.min.css"/>" rel="stylesheet">
-<link href="<c:url value="/resources/css/jquery-ui.theme.min.css"/>" rel="stylesheet">
-
 <!-- AngularJS v1.5.8 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
 
-<!-- Angular File Upload -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ng-file-upload.min.js"></script>
 
 
