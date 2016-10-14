@@ -1,10 +1,7 @@
-<html lang="en">
-<head>
-<link
-	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
-	rel="stylesheet" type="text/css" />
+
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" />
 <link href="resources/css/demo.css" rel="stylesheet" type="text/css" />
-</head>
+
 <body data-ng-app="chatApp">
 	<div data-ng-controller="ChatCtrl" class="container">
 		<form data-ng-submit="addMessage()" name="messageForm">
@@ -25,13 +22,11 @@
 		</p>
 	</div>
 
-	<script src="resources/libs/sockjs/sockjs.min.js" type="text/javascript"></script>
-	<script src="resources/libs/stomp-websocket/lib/stomp.min.js" type="text/javascript"></script>
-	<script src="resources/libs/lodash/dist/lodash.min.js"></script>
+	<script src="resources/js/sockjs.min.js" type="text/javascript"></script>
+	<script src="resources/js/stomp.min.js" type="text/javascript"></script>
+	<script src="resources/js/lodash.min.js"></script>
 	
-	<script src="resources/apps/app.js" type="text/javascript"></script>
-	<script src="resources/apps/controllers.js" type="text/javascript"></script>
-	<script src="resources/apps/services.js" type="text/javascript"></script>
+	<script src="resources/js/AngularControllers/Chat.js" type="text/javascript"></script>
 
 </body>
 </html>
