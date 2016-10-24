@@ -84,4 +84,9 @@ public class Navigation {
 	public OutputMessage sendMessage(Message message) {
 		return new OutputMessage(message, new Date());
 	}
+	@RequestMapping("job")
+	public String Job(Model m) {
+		m.addAttribute("JobClicked", "true");
+		return "Home";
+	}
 }
