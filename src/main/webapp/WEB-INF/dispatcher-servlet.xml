@@ -17,7 +17,8 @@ http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 	<context:component-scan base-package="com.niit"></context:component-scan>
 	<mvc:annotation-driven />
 
-	<websocket:message-broker application-destination-prefix="/app">
+	<websocket:message-broker
+		application-destination-prefix="/app">
 		<websocket:stomp-endpoint path="/chat">
 			<websocket:sockjs>
 			</websocket:sockjs>

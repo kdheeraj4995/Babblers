@@ -1,3 +1,4 @@
+
 app.controller('ChatCtrl', function($scope, ChatService) {
 	$scope.messages = [];
 	$scope.message = "";
@@ -12,13 +13,10 @@ app.controller('ChatCtrl', function($scope, ChatService) {
 });
 
 app.service("ChatService", function($q, $timeout) {
-	var service = {}, 
-	listener = $q.defer(), 
-	socket = {
+	var service = {}, listener = $q.defer(), socket = {
 		client : null,
 		stomp : null
-	}, 
-	messageIds = [];
+	}, messageIds = [];
 
 	service.RECONNECT_TIMEOUT = 30000;
 	service.SOCKET_URL = "/Babblers/chat";
@@ -31,7 +29,6 @@ app.service("ChatService", function($q, $timeout) {
 
 	service.send = function(message) {
 		var id = Math.floor(Math.random() * 1000000);
-		
 		socket.stomp.send(service.CHAT_BROKER, {
 			priority : 9
 		}, JSON.stringify({

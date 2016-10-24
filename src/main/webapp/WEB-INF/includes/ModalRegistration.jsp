@@ -1,6 +1,6 @@
 <style>
-.modal-header, .close {
-	background-color: #5cb85c; 
+.modal-header, h4, .close {
+	background-color: #5cb85c;
 	color: white !important;
 	text-align: center;
 	font-size: 20px;
@@ -15,7 +15,7 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header" style="padding: 15px 50px;">
-			<h4>Babbler Registration</h4>
+					<h4>Babbler Registration</h4>
 				</div>
 				<div class="modal-body" style="padding: 30px 50px;">
 					<form role="form" data-ng-submit="submit()"

@@ -6,8 +6,6 @@
 <!-- JQuery v3.1.0 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.1.0.min.js"></script>
 
-<link href="<c:url value="/resources/css/font-awesome.min.css"/>" rel="stylesheet">
-
 <!-- BootStrap v3.3.7 -->
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/bootstrap-theme.css"/>" rel="stylesheet">

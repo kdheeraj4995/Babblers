@@ -1,5 +1,5 @@
 <style>
-  .modal-header, .close {
+  .modal-header, h4, .close {
       background-color: #5cb85c;
       color:white !important;
       text-align: center;

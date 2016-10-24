@@ -6,46 +6,47 @@
 <head>
 
 <%@include file="/WEB-INF/includes/Frameworks.jsp"%>
-<script src="${pageContext.request.contextPath}/resources/js/AngularControllers/App.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/AngularControllers/App.js"></script>
 <title>Babblers</title>
 </head>
-<body style=" margin-bottom: 75px;">
+<body style="padding-top: 50px; margin-bottom: 75px">
 	<header><%@include file="/WEB-INF/includes/Header.jsp"%></header>
-	<div style="padding: 25px">
+	<div style="padding-top: 25px">
 		<c:choose>
 			<c:when test="${BlogClicked}">
-				<div class="container"style=" margin-top: 55px;">
+				<div class="container">
 					<c:import url="/WEB-INF/views/Blog.jsp">
 					</c:import>
 				</div>
 			</c:when>
 			<c:when test="${IndividualBlog}">
-				<div class="container"style=" margin-top: 55px;">
+				<div class="container">
 					<c:import url="/WEB-INF/views/IndividualBlog.jsp">
 					</c:import>
 				</div>
 			</c:when>
 			<c:when test="${ForumClicked}">
-				<div class="container"style=" margin-top: 55px;">
+				<div class="container">
 					<c:import url="/WEB-INF/views/Forum.jsp">
 					</c:import>
 				</div>
 			</c:when>
 			<c:when test="${IndividualForum}">
-				<div class="container"style=" margin-top: 55px;">
+				<div class="container">
 					<c:import url="/WEB-INF/views/IndividualForum.jsp">
 					</c:import>
 				</div>
 			</c:when>
 			<c:when test="${ChatClicked}">
-				<div class="container " style=" margin-top: 55px;">
+				<div class="container">
 					<c:import url="/WEB-INF/views/Chat.jsp">
 					</c:import>
 				</div>
 			</c:when>
 			<c:otherwise>
 			<sec:authorize access="hasRole('ROLE_USER')">
-				<div style=" margin-top: 55px;">
+				<div class="container-fluid">
 					<c:import url="/WEB-INF/views/Body.jsp">
 					</c:import>
 				</div>
@@ -53,7 +54,37 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
-	
+	<%-- <div class="container">
+		<h2>BootStrap Tabs</h2>
+		<ul class="nav nav-tabs">
+			<li><a data-toggle="tab" href="#home">Home</a></li>
+			<li><a data-toggle="tab" href="#Blog">Blog</a></li>
+			<li><a data-toggle="tab" href="#Forum">Forum</a></li>
+			<li><a data-toggle="tab" href="#Chat">Chat</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade">
+				<h3>HOME</h3>
+				<p>Home Page</p>
+			</div>
+			<div id="Blog" class="tab-pane fade">
+				<h3>Blog</h3>
+				<%@include file="/WEB-INF/views/Blog.jsp"%>
+			</div>
+			<div id="Forum" class="tab-pane fade">
+				<h3>Forum</h3>
+				<%@include file="/WEB-INF/views/Forum.jsp"%>
+			</div>
+			<div id="Chat" class="tab-pane fade">
+				<h3>Chat</h3>
+				<%@include file="/WEB-INF/views/Chat.jsp"%>
+			</div>
+		</div>
+	</div>
+ --%>
+
+
+
 	<Footer><%@include file="/WEB-INF/includes/Foot.jsp"%></Footer>
 
 	<script type="text/javascript">
