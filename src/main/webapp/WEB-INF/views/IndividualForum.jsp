@@ -38,7 +38,7 @@
 	</sec:authorize>
 	<br>
 
-<div data-ng-init="getAllForumComments()">
+<div >
 		<table class="table table-bordered table-hover">
 			<!-- <thead>
 				<tr>

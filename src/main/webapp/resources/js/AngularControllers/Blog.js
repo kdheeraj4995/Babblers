@@ -12,10 +12,11 @@ app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
 			url : BASE_URL + '/CreateBlog',
 			data : $scope.blog
 		}).success(function(data, status, headers, config) {
-			alert("Success");
+			//alert("Success");
 			$scope.blogid ='';
 			$scope.blogName = '';
 			$scope.blogDesc = '';
+			$scope.getAllBlogs();
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});	
@@ -27,7 +28,8 @@ app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
 			method : 'GET',
 			url : 'getAllBlogs'
 		}).success(function(data, status, headers, config) {
-			$scope.blogs = data;// alert(data); 
+			$scope.blogs = data;
+			//alert(data); 
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});
@@ -39,7 +41,8 @@ app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
 			method : 'DELETE',
 			url : 'deleteBlog/'+bid
 		}).success(function(data, status, headers, config) {
-			alert("Success"); 
+			//alert("Success"); 
+			$scope.getAllBlogs();
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});
@@ -69,6 +72,7 @@ app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
 			return false;
 		}
 	}
+	$scope.getAllBlogs();
 }]);
 
 

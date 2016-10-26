@@ -13,8 +13,9 @@ app.controller('IndividualForum', [ '$scope', '$http', function($scope, $http) {
 				url : BASE_URL + '/ForumComments',
 				data : $scope.comment
 			}).success(function(data, status, headers, config) {
-				alert("Success");
+				//alert("Success");
 			    $scope.commentDesc = '';
+				$scope.getAllForumComments();
 			}).error(function(data, status, headers, config) {
 				alert("Error");
 			});	
@@ -29,6 +30,7 @@ app.controller('IndividualForum', [ '$scope', '$http', function($scope, $http) {
 				alert("Error");
 			});
 		};
+		$scope.getAllForumComments();
 }]);
 
 
