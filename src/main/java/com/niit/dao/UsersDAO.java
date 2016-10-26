@@ -1,5 +1,7 @@
 package com.niit.dao;
 
+import java.util.List;
+
 import com.niit.models.User;
 
 public interface UsersDAO {
@@ -13,5 +15,9 @@ public interface UsersDAO {
 	/*Used to retrieve single user based on username*/
 	public User getUser(String username);
 	
-	public User viewUser(int blogid);
+	/* Retrieveuser details based on id */
+	public User viewUser(int userid);
+	
+	/*Retrieve user list*/
+	public List<User> UserList();
 }

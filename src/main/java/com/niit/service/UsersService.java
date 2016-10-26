@@ -13,5 +13,9 @@ public interface UsersService {
 	/*Used to save userid and name in session on Successfull Login*/
 	public void LoginSuccess(HttpSession session);
 	
+	/* Retrieve logged in User Details */
 	public User viewUser(HttpSession session);
+	/*
+	Retrieve all user and conver to JSON*/
+	public String  getAllUsers();
 }

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niit.models.Message;
 import com.niit.models.OutputMessage;
-import com.niit.service.BlogRatingService;
 import com.niit.service.BlogService;
 import com.niit.service.ForumService;
 import com.niit.service.UsersService;
@@ -30,9 +29,6 @@ public class Navigation {
 
 	@Autowired
 	private BlogService blogService;
-
-	@Autowired
-	private BlogRatingService blogRatingService;
 
 	@RequestMapping(value = { "/", "/Home" })
 	public String Homepage() {
@@ -57,7 +53,11 @@ public class Navigation {
 		m.addAttribute("ForumClicked", "true");
 		return "Home";
 	}
-
+	@RequestMapping("findfriends")
+	public String findfriends(Model m) {
+		m.addAttribute("FindFriendsClicked", "true");
+		return "Home";
+	}
 	@RequestMapping("forum/{fid}")
 	public String ViewIndividualForum(@PathVariable("fid") int fid, Model m) {
 		m.addAttribute("forumList", forumService.getSingleForum(fid));
@@ -68,7 +68,7 @@ public class Navigation {
 	@RequestMapping("blog/{bid}")
 	public String ViewIndividualBlog(@PathVariable("bid") int bid, Model m, HttpSession session) {
 		m.addAttribute("blogList", blogService.getSingleBlog(bid));
-		m.addAttribute("blogRating", blogRatingService.BlogRatingList(bid, session));
+		//m.addAttribute("blogRating", blogRatingService.BlogRatingList(bid, session));
 		m.addAttribute("IndividualBlog", "true");
 		return "Home";
 	}
@@ -84,9 +84,5 @@ public class Navigation {
 	public OutputMessage sendMessage(Message message) {
 		return new OutputMessage(message, new Date());
 	}
-	@RequestMapping("job")
-	public String Job(Model m) {
-		m.addAttribute("JobClicked", "true");
-		return "Home";
-	}
+	
 }

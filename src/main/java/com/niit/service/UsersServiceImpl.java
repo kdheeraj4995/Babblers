@@ -1,11 +1,14 @@
 package com.niit.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
 import com.niit.dao.UsersDAO;
 import com.niit.models.User;
 
@@ -34,8 +37,16 @@ public class UsersServiceImpl implements UsersService{
 		session.setAttribute("name", user.getName());
 	}
 
-	
+	/* Retrieve logged in User Details */
 	public User viewUser(HttpSession session) {
 		return usersDAO.viewUser((int) session.getAttribute("userid"));
+	}
+	
+	public String  getAllUsers() 
+	{
+		List<User> list=usersDAO.UserList();
+		Gson gson=new Gson();
+		String data=gson.toJson(list);
+		return data;
 	}
 }

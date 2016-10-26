@@ -47,4 +47,6 @@ public class RC_Users {
 		User user=usersService.viewUser(session);
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
+	
+	
 }

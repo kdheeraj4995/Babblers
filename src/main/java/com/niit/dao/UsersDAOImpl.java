@@ -1,5 +1,7 @@
 package com.niit.dao;
 
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -37,6 +39,7 @@ public class UsersDAOImpl implements UsersDAO {
 		return user;
 	}
 
+	/* Retrieveuser details based on id */
 	@Transactional
 	public User viewUser(int userid) {
 		Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);
@@ -44,6 +47,14 @@ public class UsersDAOImpl implements UsersDAO {
 		User blog=(User) c.uniqueResult();
 		return blog;
 		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public List<User> UserList() {
+		Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);
+		List<User> l = c.list();
+		return l;
 	}
 
 }
