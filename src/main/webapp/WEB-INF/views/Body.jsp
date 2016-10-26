@@ -16,7 +16,8 @@
 				</div>
 				<div class="well">
 				<a data-toggle="tab" href="#home" class="active">Home</a> ||
-				<a data-toggle="tab" href="#new">Settings</a>
+				<a data-toggle="tab" href="#settings">Settings</a> 
+				
 				</div>
 			</div>
 
@@ -25,7 +26,7 @@
 					<div id="home" class="tab-pane fade in active">
 						<%@include file="/WEB-INF/views/Wall.jsp"%>
 					</div>
-					<div id="new" class="tab-pane fade">
+					<div id="settings" class="tab-pane fade">
 						<h3>Image Upload</h3>
 						<%@include file="/WEB-INF/views/settings.jsp"%>
 					</div>

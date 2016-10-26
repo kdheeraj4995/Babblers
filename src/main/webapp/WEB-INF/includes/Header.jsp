@@ -17,7 +17,10 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
 					<li><a href="${pageContext.request.contextPath}/forum">Forum</a></li>
-					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
+					<sec:authorize access="isAuthenticated()">
+						<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
+					</sec:authorize>
+					<li><a href="${pageContext.request.contextPath}/findfriends">FindFriends</a></li>
 					<!-- <li><a data-toggle="tab" href="#Blog">Blog</a></li>
 					<li><a data-toggle="tab" href="#Forum">Forum</a></li>
 					<li><a data-toggle="tab" href="#Chat">Chat</a></li> -->
@@ -28,12 +31,10 @@
 								class="glyphicon glyphicon-log-out"></span></a></li>
 					</sec:authorize>
 					<sec:authorize access="!isAuthenticated()">
-						<li><a href="#log" data-toggle="modal" data-target="#login"><span
-								class="glyphicon glyphicon-log-in"></span></a></li>
-						<li><a href="#reg" data-toggle="modal"
-							data-target="#registration"> <span
-								class="glyphicon glyphicon-user"></span>
-						</a></li>
+						<li><a href="#log" data-toggle="modal" data-target="#login">
+							<span class="glyphicon glyphicon-log-in"></span></a></li>
+						<li><a href="#reg" data-toggle="modal" data-target="#registration"> 
+							<span class="glyphicon glyphicon-user"></span></a></li>
 					</sec:authorize>
 				</ul>
 			</div>
