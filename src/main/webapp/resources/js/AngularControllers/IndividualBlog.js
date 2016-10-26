@@ -5,7 +5,7 @@ app.controller('IndividualBlog', [ '$scope', '$http', function($scope, $http) {
 	$scope.blograting=" ";
 	$scope.br_bid=document.getElementById("bid").value; 
 
-    $scope.$watch('blograting', function() {
+    /*$scope.$watch('blograting', function() {
     	alert('hey, myVar has changed!'+$scope.blograting);
     	$scope.blogRatings = {	
     			br_bid    : $scope.br_bid,
@@ -27,5 +27,5 @@ app.controller('IndividualBlog', [ '$scope', '$http', function($scope, $http) {
         else {
         	
 		}
-    });
+    });*/
 }]);

@@ -1,8 +1,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-<div data-ng-controller="BlogController">
+<div data-ng-controller="BlogController"  data-ng-submit="submit()">
 	<sec:authorize access="isAuthenticated()">
-		<form role="form" data-ng-submit="submit()"
-			data-ng-controller="BlogController">
+		<form role="form">
 			<h3 align="center">Create Blog</h3>
 			<div class="form-group">
 				<input type="text" class="form-control input-sm"
@@ -24,14 +23,13 @@
 		</form>
 	</sec:authorize>
 	<br>
-	<div data-ng-init="getAllBlogs()">
+	<div>
 		<table class="table table-bordered table-hover">
 			<thead>
 				<tr>
 					<!-- <th>Blog ID</th> -->
 					<th>Blog Name</th>
 					<th colspan="2">Blog Description</th>
-
 				</tr>
 			</thead>
 			<tbody>
@@ -57,7 +55,6 @@
 			</tbody>
 		</table>
 	</div>
-
 <input type="text" value="${sessionScope.userid}" style="margin-top: 75px" id="userid" hidden="true" />
 <script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Blog.js"></script>
 </div>
