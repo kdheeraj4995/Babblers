@@ -1,7 +1,7 @@
 app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
 	  $scope.userid=document.getElementById("userid").value; 
-	$scope.submit = function() {
-		var BASE_URL = 'http://localhost:8085/Babblers';
+	  var BASE_URL = 'http://localhost:8085/Babblers';
+	  $scope.submit = function() {	
 		$scope.forum = {	
 			fid       : $scope.forumid,
 			forumName : $scope.forumName,
@@ -12,10 +12,11 @@ app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
 			url : BASE_URL +'/CreateForum',
 			data : $scope.forum
 		}).success(function(data, status, headers, config) {
-			alert("Success");
+			//alert("Success");
 			$scope.forumid ='';
 			$scope.forumName = '';
 			$scope.forumDesc = '';
+			$scope.getAllForums();
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});	
@@ -49,7 +50,8 @@ app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
 			method : 'DELETE',
 			url : 'deleteForum/'+fid
 		}).success(function(data, status, headers, config) {
-			alert("Success"); 
+			//alert("Success"); 
+			$scope.getAllForums();
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});
@@ -71,7 +73,6 @@ app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
 	};
 	
 	$scope.accessForum = function(f_userid) {
-		//alert("Hello"+f_userid);
 		if($scope.userid==f_userid)
 		{
 			return true;
@@ -81,7 +82,7 @@ app.controller('ForumController', [ '$scope', '$http', function($scope, $http) {
 			return false;
 		}
 	}
-	
+	$scope.getAllForums();
 }]);
 
 

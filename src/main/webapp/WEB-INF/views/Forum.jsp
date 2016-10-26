@@ -2,11 +2,10 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
-<div data-ng-controller="ForumController">
+<div data-ng-controller="ForumController" data-ng-submit="submit()">
 
 	<sec:authorize access="isAuthenticated()">
-		<form role="form" data-ng-submit="submit()"
-			data-ng-controller="ForumController">
+		<form role="form">
 			<h3 align="center">Create Forum</h3>
 			<div class="form-group">
 				<input type="text" class="form-control input-sm"
@@ -28,7 +27,7 @@
 		</form>
 	</sec:authorize>
 	<br>
-	<div data-ng-init="getAllForums()">
+	<div>
 		<table class="table table-bordered table-hover">
 			<thead>
 				<tr>
@@ -46,19 +45,21 @@
 							<sec:authorize access="isAuthenticated()">
 								<div data-ng-if="accessForum(forum.f_userid)">
 									<a class="btn btn-primary btn-xs"
-										data-ng-click="deleteForum(forum.fid)">Delete</a> 
-									<a	class="btn btn-primary btn-xs"
+										data-ng-click="deleteForum(forum.fid)">Delete</a> <a
+										class="btn btn-primary btn-xs"
 										data-ng-click="editForum(forum.fid)">Edit</a>
 								</div>
 							</sec:authorize>
-						</div>	
+						</div>
 					</td>
-					<td width="5%"><a href="forum/{{forum.fid}}" class="btn btn-primary btn-xs">View</a></td>
+					<td width="5%"><a href="forum/{{forum.fid}}"
+						class="btn btn-primary btn-xs">View</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-<input type="text" value="${sessionScope.userid}" style="margin-top: 75px" id="userid" hidden="true" />
+	<input type="text" value="${sessionScope.userid}"
+		style="margin-top: 75px" id="userid" hidden="true" />
 
 
 	<script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Forum.js"></script>
