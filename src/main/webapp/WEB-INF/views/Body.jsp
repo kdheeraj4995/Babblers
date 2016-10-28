@@ -6,18 +6,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body >
+<body>
 	<div class="container text-center">
 		<div class="row">
 			<div class="col-sm-3 well ">
-				<div class="well" data-ng-init="profileimage()" data-ng-controller="ProfileImage">
-					<p><a href="#">My Profile</a></p>
-					<img data-ng-src="data:image/JPEG;base64,{{img}}" class="img-circle" height="65px" width="65px" alt="Avatar">
+				<div class="well" data-ng-init="profileimage()"
+					data-ng-controller="ProfileImage">
+					<p>
+						<a href="#">My Profile</a>
+					</p>
+					<img data-ng-src="data:image/JPEG;base64,{{img}}"
+						class="img-circle" height="65px" width="65px">
 				</div>
-				<div class="well">
-				<a data-toggle="tab" href="#home" class="active">Home</a> ||
-				<a data-toggle="tab" href="#settings">Settings</a> 
-				
+				<div class="thumbnail">
+					<a data-toggle="tab" href="#home" class="active">Home</a> || <a
+						data-toggle="tab" href="#settings">Settings</a>
 				</div>
 			</div>
 
@@ -27,15 +30,19 @@
 						<%@include file="/WEB-INF/views/Wall.jsp"%>
 					</div>
 					<div id="settings" class="tab-pane fade">
-						<h3>Image Upload</h3>
-						<%@include file="/WEB-INF/views/settings.jsp"%>
+						<div>
+							<input type="file" class=" btn btn-default" id="file" name="file"
+							onchange="angular.element(this).scope().uploadFile(this.files)">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Profile.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/AngularControllers/Settings.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/AngularControllers/Profile.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/AngularControllers/Settings.js"></script>
 </body>
 </html>
 

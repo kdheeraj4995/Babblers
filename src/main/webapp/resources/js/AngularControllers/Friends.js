@@ -12,6 +12,5 @@ app.controller('FriendController', [ '$scope', '$http', function($scope, $http) 
 				alert("Error");
 			});
 		};
-	
 		$scope.getAllUsers();
 }]);

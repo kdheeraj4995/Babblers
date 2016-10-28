@@ -25,7 +25,7 @@
 					<li><a data-toggle="tab" href="#Forum">Forum</a></li>
 					<li><a data-toggle="tab" href="#Chat">Chat</a></li> -->
 					<sec:authorize access="isAuthenticated()">
-						<li><a style="color: white">Hello <b><sec:authentication
+						<li><a style="color: white" href="${pageContext.request.contextPath}/Home">Hello <b><sec:authentication
 										property="principal.username" /></b></a></li>
 						<li><a href="${pageContext.request.contextPath}/perform_logout"><span
 								class="glyphicon glyphicon-log-out"></span></a></li>

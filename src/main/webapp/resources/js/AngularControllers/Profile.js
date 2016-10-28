@@ -4,7 +4,6 @@ app.controller('ProfileImage', [ '$scope', '$http', function($scope, $http) {
 		$http({
 			method : 'GET',
 			url : BASE_URL+'/profileimage',
-
 		}).success(function(data, status, headers, config) {
 			$scope.img = data.image
 			

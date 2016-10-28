@@ -44,6 +44,12 @@
 					</c:import>
 				</div>
 			</c:when>
+			<c:when test="${ProfileClicked}">
+				<div class="container">
+					<c:import url="/WEB-INF/views/Profile.jsp">
+					</c:import>
+				</div>
+			</c:when>
 			<c:when test="${ChatClicked}">
 				<div class="container">
 					<c:import url="/WEB-INF/views/Chat.jsp">
