@@ -49,4 +49,9 @@ public class UsersServiceImpl implements UsersService{
 		String data=gson.toJson(list);
 		return data;
 	}
+
+	/* Retrieve Single User Details */
+	public User viewUser(int profileid) {
+		return usersDAO.viewUser(profileid);
+	}
 }

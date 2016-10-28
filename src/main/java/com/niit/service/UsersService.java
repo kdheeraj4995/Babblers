@@ -16,6 +16,11 @@ public interface UsersService {
 	/* Retrieve logged in User Details */
 	public User viewUser(HttpSession session);
 	/*
+	 
+	/* Retrieve Single User Details */
+	public User viewUser(int profileid);
+	
+	/*
 	Retrieve all user and conver to JSON*/
 	public String  getAllUsers();
 }

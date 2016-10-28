@@ -53,11 +53,20 @@ public class Navigation {
 		m.addAttribute("ForumClicked", "true");
 		return "Home";
 	}
+	
 	@RequestMapping("findfriends")
 	public String findfriends(Model m) {
 		m.addAttribute("FindFriendsClicked", "true");
 		return "Home";
 	}
+	
+	@RequestMapping("profile/{id}")
+	public String profile(@PathVariable("id") int id,Model m) {
+		m.addAttribute("ProfileClicked", "true");
+		m.addAttribute("ViewProfile", id);
+		return "Home";
+	}
+	
 	@RequestMapping("forum/{fid}")
 	public String ViewIndividualForum(@PathVariable("fid") int fid, Model m) {
 		m.addAttribute("forumList", forumService.getSingleForum(fid));
